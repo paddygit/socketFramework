@@ -2,6 +2,7 @@
 #include "InputOutputInterface.h"
 #include "UnixSocket.h"
 #include <memory>
+#include <fcntl.h>
 using namespace std;
 
 class SocketConnection: public ReadWriteInterface
@@ -11,7 +12,7 @@ class SocketConnection: public ReadWriteInterface
    protected:
 
    public:
-      SocketConnection( Socket* socket ): mSocket( socket ) {}
+      SocketConnection( Socket* socket ): mSocket( socket ) { }
       SocketConnection( unique_ptr<Socket>&& sock ): mSocket( std::move(sock) ) {}
       SocketConnection( int sockFD ) 
       {

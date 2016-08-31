@@ -79,7 +79,7 @@ StreamSocket::StreamSocket ( int family, int type, int protocol )
 {
    if ( -1 != mSockHandle )
    {
-      ( void )close( mSockHandle );
+      //close( mSockHandle );
    }
 }
 

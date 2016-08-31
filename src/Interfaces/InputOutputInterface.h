@@ -17,3 +17,4 @@ class WriteInterface
 class ReadWriteInterface: public ReadInterface, public WriteInterface
 {
 };
+
